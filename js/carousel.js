@@ -10,7 +10,7 @@ var previous = document.getElementById('previous');
 
 // Have carousel rotate on its own
 var start = document.getElementById('start');
-var start = document.getElementById('stop');
+var stop = document.getElementById('stop');
 
 
 carousel.style.marginLeft = 0;
@@ -35,3 +35,34 @@ previous.onmouseout = function(event){
 
 
 // Create onclick events to advance the images
+next.onclick = function(event) {
+  if (position === -1224) {
+    position = 0;
+    carousel.style.marginLeft = position + 'px';
+  } else {
+    posiiton += -612;
+    carousel.style.marginLeft = position + 'px'
+  }
+};
+
+previous.onclick = function(event) {
+  if (position === 0) {
+    position = -1224;
+    carousel.style.marginLeft = position + 'px';
+  } else {
+    posiiton += 612;
+    carousel.style.marginLeft = position + 'px'
+  }
+};
+
+var currentTranslation = -SLIDE_WIDTH;
+
+carousel.style.webkitTransition = '-webkit-transform 1200ms';
+  setInterval(_____, 2000);
+
+function init() {
+  var carousel = document.getElementById('carousel');
+  carousel.style.webkitTransition = '-webkit-transform 1200ms';
+  setInterval(doIt, 2000)
+  // getFlickrData();
+}
